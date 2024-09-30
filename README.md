@@ -16,7 +16,7 @@
 <div align="center">
 |   &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;권오셈 &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;    |      &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;오창준  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;    |      &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;박화랑  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;    |     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;김효은  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;   | 
         
-|&&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  팀장, DL &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  | &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;DL, README &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; |  &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;EDA, ML(LGBM, XGB) &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  | &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  EDA(Z-scale), ML(RF) &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;|
+|&&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  팀장, DL(MLP,모듈화) &nbsp;&nbsp; &nbsp; &nbsp;  | &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;DL(MLP), README &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; |  &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;EDA, ML(LGBM, XGB) &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  | &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  EDA(Z-scale), ML(RF) &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;|
 
 
 </div>
@@ -24,7 +24,7 @@
 ### 데이터 분석 목표
 >
 <hr>
-- 통신사의 고객별 사용량,요금,고객의 소득, 통화 패턴 등 여러 데이터를 이탈 여부와 ML,DL모델을 통해 결부시켜, 고객 데이터들 통해 향후 고객 이탈 예측 및 대응방안 강구
+- 통신사의 고객별 사용량,요금,고객의 소득, 통화 패턴 등 여러 데이터를 이탈 여부를를 ML,DL모델을 통해 결부시켜, 고객 데이터들 통해 향후 고객 이탈 예측 및 대응방안 강구
 
 
 ### 데이터 로드 및 결측치| 중복값 확인
