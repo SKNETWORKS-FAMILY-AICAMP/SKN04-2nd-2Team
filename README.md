@@ -216,8 +216,10 @@ NNI를 통한 최종 HYPERPARAM 조합
 
 HIDDEN LAYER 개수 4, EPOCHS 10, EARLY-STOP 작동X
 <div align="center">
+        
 실행결과
 <img src="./data/acc_result.png">
+
 cross_validation 결과
 <img src="./data/matrix_result.png">
 </div>
