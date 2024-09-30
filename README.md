@@ -21,17 +21,17 @@
 ### 데이터 분석 목표
 >
 <hr>
-- 통신사의 고객별 사용량,요금,고객의 소득, 통화 패턴 등 여러 데이터를 이탈 여부와 ML,DL모델을 통해 결부시켜, 고객 데이터들 통해 향후 고객 이탈 예측 및 대응방안 강구
+- 통신사의 고객별 사용량|요금|고객의 소득| 통화 패턴 등 여러 데이터를 이탈 여부와 ML|DL모델을 통해 결부시켜| 고객 데이터들 통해 향후 고객 이탈 예측 및 대응방안 강구
 
 
 ###EDA
 
-여기 주어진 데이터셋의 설명을 기반으로 README 파일에 들어갈 수 있는 표를 만들어드릴게요:
+여기 주어진 데이터셋의 설명을 기반으로 README 파일에 들어갈 수 있는 표를 만들어드릴게요|
 
 ---
 
 
-### 데이터 로드 및 결측치, 중복값 확인
+### 데이터 로드 및 결측치| 중복값 확인
 
 ```python
 # 결측치 확인
@@ -46,7 +46,7 @@ data.isna().sum().sum()
 data = data.dropna().reset_index(drop=True)
 ```
 ```python
-data.duplicated().sum() # 중복값 확인, 결과는 0
+data.duplicated().sum() # 중복값 확인| 결과는 0
 ```
 ```python
 # 본격적으로 들어가기 target데이터 분포 확인
@@ -168,11 +168,155 @@ data.to_csv('./data/preprocessing_train.csv', index= False)
 ```
 
 
-###DL
 
--DL 여기에
 
-###ML
 
--ML여기에
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### ML 사용기법: LGBMClassifier, XGBClassifier, RandomForestClassifier
+
+선정이유: Tree계열 모델을 활용하여 Feature_importace 뽑아 어떤 변수가 고객이탈에 유의미한 영향을 끼치는 지 확인
+
+```python
+
+for i, (train_index, test_index) in enumerate(stratified_k_fold.split(data, data.Churn)):
+    temp = data.iloc[train_index]
+    test = data.iloc[test_index]
+    train, valid = train_test_split(temp, test_size= len(test)/len(temp), random_state=0)
+
+    rf = RandomForestClassifier(random_state=0)
+    
+    parameters = {
+        'max_depth': np.random.randint(1, 15, 5),
+        'n_estimators': np.random.randint(50, 500, 20),
+        }
+
+    random_search = RandomizedSearchCV(rf, parameters, random_state=0)
+    random_search.fit(train.drop(columns=['Churn']), train.Churn)
+
+    index_best_param = random_search.cv_results_.get('rank_test_score').argmax()
+    best_params = random_search.cv_results_.get('params')[index_best_param]
+
+    rf =RandomForestClassifier(
+        n_estimators = best_params.get('n_estimators'),
+        max_depth = best_params.get('max_depth'),
+        random_state=0
+    ).fit(train.drop(columns=['Churn']), train.Churn)
+
+    confusion_matrix_result = confusion_matrix(
+        test.Churn,
+        rf.predict(test.drop(columns=['Churn']))
+    )
+
+```
+# 모델 학습 결과
+### LGBMClassifier
+| Fold | precision | recall | f1 | accuracy |best_importances|
+|------|-----------|--------|----|----------|----------------|
+|fold1| 0.71 | 0.99 |0.83| 0.71| MonthsInService| 
+|fold2| 0.74 | 0.91 |0.82| 0.71| PercChangeMinutes|
+|fold3| 0.74 | 0.92 |0.82| 0.71| PercChangeMinutes|
+|fold4| 0.71 | 1.0  |0.83| 0.71| MonthsInService| 
+|fold5| 0.74 | 0.93 |0.82| 0.72| PercChangeMinutes|
+
+### XGBClassifier
+| Fold | precision | recall | f1 | accuracy |best_importances|
+|------|-----------|--------|----|----------|----------------|
+|fold1| 0.74 | 0.90 |0.81| 0.70| HandsetRefurbished| 
+|fold2| 0.75 | 0.89 |0.81| 0.70| HandsetRefurbished|
+|fold3| 0.74 | 0.89 |0.81| 0.70| HandsetRefurbished|
+|fold4| 0.74 | 0.90 |0.81| 0.70| HandsetWebCapable | 
+|fold5| 0.74 | 0.90 |0.81| 0.7`| HandsetRefurbished|
+
+### RandomForestClassifier
+| Fold | precision | recall | f1 | accuracy |best_importances|
+|------|-----------|--------|----|----------|----------------|
+|fold1| 0.72 | 1.0  |0.83| 0.72| MonthsInService| 
+|fold2| 0.72 | 1.0  |0.83| 0.72| PercChangeMinutes|
+|fold3| 0.72 | 1.0  |0.83| 0.72| PercChangeMinutes|
+|fold4| 0.72 | 1.0  |0.84| 0.72| MonthsInService| 
+|fold5| 0.72 | 1.0  |0.83| 0.72| PercChangeMinutes|
+
+
 
