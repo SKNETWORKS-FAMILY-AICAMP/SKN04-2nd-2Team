@@ -7,10 +7,10 @@
 
 ### 팀원 소개
 <p align="center">
-        <img src="https|//avatars.githubusercontent.com/말랑곰" width="150" height="150"/>
-        <img src="https|//avatars.githubusercontent.com/sunblockisneeded" width="150" height="150"/>
-        <img src="https|//avatars.githubusercontent.com/말랑곰" width="150" height="150"/>
-        <img src="https|//avatars.githubusercontent.com/말랑곰" width="150" height="150"/>
+        <img src="https://avatars.githubusercontent.com/말랑곰" width="150" height="150"/>
+        <img src="https://avatars.githubusercontent.com/sunblockisneeded" width="150" height="150"/>
+        <img src="https://avatars.githubusercontent.com/말랑곰" width="150" height="150"/>
+        <img src="https://avatars.githubusercontent.com/말랑곰" width="150" height="150"/>
         
   
 <div align="center">
@@ -292,4 +292,9 @@ for i, (train_index, test_index) in enumerate(stratified_k_fold.split(data, data
 |fold5| 0.72 | 1.0  |0.83| 0.72| PercChangeMinutes|
 
 
+# 결론
 
+### acc: 0.8을 넘지 못함
+### 유의미한 변수를 찾지 못함
+### 데이터 불균형으로 인한 모델 학습 실패
+### 유의미한 칼럼이 빠졌거나 애초에 Churn을 잘못수집했을 가능성이 있음음
