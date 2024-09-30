@@ -15,8 +15,8 @@
   
 <div align="center">
 |   &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;권오셈 &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;    |      &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;오창준  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;    |      &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;박화랑  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;    |     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;김효은  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;   | 
-||------------------------------------------|||--------------------------------------|||------------------------------------------|||-----------------------------------||
-|DB 및 총괄|크롤링 / streamlit|크롤링 / streamlit|크롤링 / streamlit|
+|:------------------------------------------:|:--------------------------------------:|:------------------------------------------:|:-----------------------------------:|
+
 </div>
 
 ### 데이터 분석 목표
@@ -166,104 +166,68 @@ data = data.astype(dict(zip(np.extract(data.dtypes == object , data.columns), ['
 # csv 내보내기
 data.to_csv('./data/preprocessing_train.csv', index= False)
 ```
+### DEEP LEARNING
+>
+<hr>
 
+전처리 후 이진 분류에 필요한 모델과 OPTIMIZER, 손실함수 선정
+모델 - MLP : 고객행동/특성과 이탈여부 사이의 비선형적인 복잡한 관계를 학습하기 위해서.
 
+옵티마이저 - ADAM : ADAM은 학습률을 자동으로 조정하기에 더 효율적으로 최적화 과정을 진행할 수 있음.
+학습 특성이 많은 경우에도, ADAM은 다른 OPTIMIZER보다 빠르게 답에 수렴하면서도 과적합을 방지하는데 도움이 된다고 알려져 있음
 
+손실함수 - binary_cross_entropy(BCE)_with_logits : 이진 분류 문제에 적합한 손실 함수. 내부적으로 Sigmoid와 교차 엔트로피 손실을 함께 계산하기 때문에 그냥 BCE보다 수치적으로 안정적이고 효율적임.
 
 
 
+하이퍼파라미터 튜닝 요약
+>
+<hr>
 
+다음 서술될 유의미한 변화를 관찰할 수 없다는 말은
+정확도(Acc), VAL_LOSS, TRAIN_LOSS의 수치상 유의미한 변화를 찾을 수 없음을 의미.
 
 
+BATCH SIZE
 
+64 ~ 512 유의미한 차이 관찰 X
 
+EPOCHS
 
+PATIENT 5~10 설정시 LOSS 4~6STEP 후 early stop 에 의해 정지
+LEARNING RATE
 
+0.001 ~ 0.03 범위에서 유의미한 변화 관찰 X
 
+HIDDEN_DIM
 
+64~512 유의미한 결과 관찰 X
+DROPOUT RATIO
 
+0.1에서 0.5까지 유의미한 경향 X
+은닉층 개수 2개 ~7개
 
+유의미한 변화 관찰 X
+NNI를 통한 최종 HYPERPARAM 조합
+<div align="center">
+<img src=".\data/NNI_hyperparam_result.png">
+</div>
 
 
+HIDDEN LAYER 개수 4, EPOCHS 10, EARLY-STOP 작동X
+<div align="center">
+실행결과
+<img src="./data/acc_result.png">
+cross_validation 결과
+<img src="./data/matrix_result.png">
+</div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Deel Learning결과
+test data의 0 대 1 비율은 약 71: 29 인데 acc가 0.71
+결과를 보면 0의 재현율이 recall이 1
+loss값은 줄어드는 모습을 보임
+1,2,3 을 종합해 보았을 때, 학습이 만족스러운 수준으로 일어나지 않았고, 많은 값들이 1으로 올라가지 못하는 모습을 관찰할 수 있음.
 
 ### ML 사용기법: LGBMClassifier, XGBClassifier, RandomForestClassifier
 
