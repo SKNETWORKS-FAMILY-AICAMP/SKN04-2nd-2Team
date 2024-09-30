@@ -16,7 +16,7 @@
 <div align="center">
 |   &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;권오셈 &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;    |      &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;오창준  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;    |      &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;박화랑  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;    |     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;김효은  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;   | 
         
-|&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  팀장, DL &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;DL, README &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  | &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;EDA, ML(LGBM, XGB) &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  | &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  EDA(Z-scale), ML(RF) &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; |
+|&&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  팀장, DL &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  | &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;DL, README &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; |  &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;EDA, ML(LGBM, XGB) &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  | &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  EDA(Z-scale), ML(RF) &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;|
 
 
 </div>
