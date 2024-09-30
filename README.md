@@ -15,7 +15,8 @@
   
 <div align="center">
 |   &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;권오셈 &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;    |      &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;오창준  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;    |      &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;박화랑  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;    |     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;김효은  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;   | 
-|&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp; 팀장, DL &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;| &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;DL, README &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;| &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;EDA, ML &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;| &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;EDA, ML &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;|
+        
+|&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  팀장, DL &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;DL, README &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  | &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;EDA, ML &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  | &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  EDA, ML &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; |
 
 
 </div>
@@ -25,12 +26,6 @@
 <hr>
 - 통신사의 고객별 사용량,요금,고객의 소득, 통화 패턴 등 여러 데이터를 이탈 여부와 ML,DL모델을 통해 결부시켜, 고객 데이터들 통해 향후 고객 이탈 예측 및 대응방안 강구
 
-
-###EDA
-
-여기 주어진 데이터셋의 설명을 기반으로 README 파일에 들어갈 수 있는 표를 만들어드릴게요:
-
----
 
 ### 데이터 로드 및 결측치| 중복값 확인
 
