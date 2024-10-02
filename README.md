@@ -16,7 +16,7 @@
 <div align="center">
 |   &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;권오셈 &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;    |      &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;오창준  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;    |      &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;박화랑  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;    |     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;김효은  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;   | 
         
-|&&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  팀장, DL(MLP,모듈화) &nbsp;&nbsp; &nbsp; &nbsp;  | &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;DL(MLP), README &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; |  &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;EDA, ML(LGBM, XGB) &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  | &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  EDA(Z-scale), ML(RF) &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;|
+|&nbsp;  &nbsp;  팀장, DL(MLP,모듈화) &nbsp; &nbsp;| &nbsp;  &nbsp;DL(MLP), README &nbsp;&nbsp; | &nbsp;  &nbsp;EDA, ML(LGBM, XGB) &nbsp;&nbsp;|&nbsp;  &nbsp;  EDA(Z-scale), ML(RF) &nbsp;&nbsp;|
 
 
 </div>
@@ -25,6 +25,72 @@
 >
 <hr>
 - 통신사의 고객별 사용량,요금,고객의 소득, 통화 패턴 등 여러 데이터를 이탈 여부를를 ML,DL모델을 통해 결부시켜, 고객 데이터들 통해 향후 고객 이탈 예측 및 대응방안 강구
+
+## 데이터셋 설명
+
+| 변수명 | 데이터 타입 | 설명 |
+|--------|-------------|------|
+| CustomerID | int64   | 고객의 고유 식별자 |
+| Churn | object | 고객이 서비스를 해지했는지 여부를 나타내는 이진 값 (1: 해지, 0: 유지) |
+| MonthlyRevenue | float64 | 월별 고객 매출, 고객이 매달 지불하는 금액 |
+| MonthlyMinutes | float64 | 고객이 매달 사용한 통화 시간(분) |
+| TotalRecurringCharge | float64 | 월별 반복 청구되는 요금 (기본 요금) |
+| DirectorAssistedCalls | float64 | 고객이 콜센터나 고객 지원 서비스를 통해 도움을 받은 통화 횟수 |
+| OverageMinutes | float64 | 기본 제공 통화 시간을 초과한 분 수 |
+| RoamingCalls | float64 | 로밍 상태에서 걸린 통화 횟수 |
+| PercChangeMinutes | float64 | 통화 시간이 전월 대비 몇 퍼센트 변동했는지 |
+| PercChangeRevenues | float64 | 수익이 전월 대비 몇 퍼센트 변동했는지 |
+| DroppedCalls | float64 | 통화 중 끊긴 횟수 |
+| BlockedCalls | float64 | 통화 연결 실패 횟수 |
+| UnansweredCalls | float64 | 응답하지 않은 전화 횟수 |
+| CustomerCareCalls | float64 | 고객이 고객 서비스에 건 전화 횟수 |
+| ThreewayCalls | float64 | 삼자 통화 횟수 |
+| ReceivedCalls | float64 | 받은 전화의 횟수 |
+| OutboundCalls | float64 | 발신한 전화 횟수 |
+| InboundCalls | float64 | 수신한 전화 횟수 |
+| PeakCallsInOut | float64 | 피크 시간대 발신 및 수신 전화 횟수 |
+| OffPeakCallsInOut | float64 | 비피크 시간대 발신 및 수신 전화 횟수 |
+| DroppedBlockedCalls | float64 | 끊긴 통화와 연결 실패 통화의 총합 |
+| CallForwardingCalls | float64 | 착신 전환된 통화 횟수 |
+| CallWaitingCalls | float64 | 대기 중인 통화 횟수 |
+| MonthsInService | int64   | 고객이 서비스에 가입한 기간(월) |
+| UniqueSubs | int64 | 고객이 연결된 고유 가입자의 수 |
+| ActiveSubs | int64 | 현재 활성 상태인 가입자의 수 |
+| ServiceArea | object | 서비스 지역 |
+| Handsets | float64 | 사용 중인 휴대폰의 수 |
+| HandsetModels | float64 | 사용 중인 휴대폰 모델의 수 |
+| CurrentEquipmentDays | float64 | 현재 장비(휴대폰)를 사용한 일수 |
+| AgeHH1 | float64 | 가구주 1의 나이 |
+| AgeHH2 | float64 | 가구주 2의 나이 |
+| ChildrenInHH | float64 | 가구에 있는 자녀 수 |
+| HandsetRefurbished | object | 고객이 사용하는 휴대폰이 리퍼폰인지 여부 |
+| HandsetWebCapable | object | 고객의 휴대폰이 인터넷 접속이 가능한지 여부 |
+| TruckOwner | object | 고객이 트럭을 소유하고 있는지 여부 |
+| RVOwner | object | 고객이 RV(레저용 차량)를 소유하고 있는지 여부 |
+| Homeownership | object | 고객이 주택을 소유하고 있는지 여부 |
+| BuysViaMailOrder | object | 우편 주문을 통해 물건을 구매하는지 여부 |
+| RespondsToMailOffers | object | 우편으로 받은 마케팅 제안에 응답하는지 여부 |
+| OptOutMailings | object | 우편 수신 거부 여부 |
+| NonUSTravel | object | 미국 외의 지역으로 여행을 하는지 여부 |
+| OwnsComputer | object | 컴퓨터를 소유하고 있는지 여부 |
+| HasCreditCard | object | 신용카드를 소유하고 있는지 여부 |
+| RetentionCalls | float64 | 고객 유지팀에 걸려온 전화 횟수 |
+| RetentionOffersAccepted | float64 | 고객 유지팀에서 제안한 오퍼를 수락한 횟수 |
+| NewCellphoneUser | object | 새 휴대폰 사용자인지 여부 |
+| NotNewCellphoneUser | object | 기존 휴대폰 사용자인지 여부 |
+| ReferralsMadeBySubscriber | float64 | 고객이 추천한 가입자의 수 |
+| IncomeGroup | object | 고객의 소득 수준을 나타내는 그룹 |
+| OwnsMotorcycle | object | 고객이 오토바이를 소유하고 있는지 여부 |
+| AdjustmentsToCreditRating | float64 | 신용 등급에 대한 조정 사항 |
+| HandsetPrice | float64 | 고객이 소유한 휴대폰의 가격 |
+| MadeCallToRetentionTeam | object | 고객 유지팀에 전화를 건 적이 있는지 여부 |
+| CreditRating | float64 | 고객의 신용 등급 |
+| PrizmCode | object | 고객의 사회 경제적 프로파일을 나타내는 코드 |
+| Occupation | object | 고객의 직업 |
+| MaritalStatus | object | 고객의 결혼 여부 |
+| data.shape = (51047, 58)|
+
+--- 
 
 
 ### 데이터 로드 및 결측치| 중복값 확인
@@ -280,7 +346,7 @@ for i, (train_index, test_index) in enumerate(stratified_k_fold.split(data, data
 |fold2| 0.75 | 0.89 |0.81| 0.70| HandsetRefurbished|
 |fold3| 0.74 | 0.89 |0.81| 0.70| HandsetRefurbished|
 |fold4| 0.74 | 0.90 |0.81| 0.70| HandsetWebCapable | 
-|fold5| 0.74 | 0.90 |0.81| 0.7`| HandsetRefurbished|
+|fold5| 0.74 | 0.90 |0.81| 0.70| HandsetRefurbished|
 
 ### RandomForestClassifier
 | Fold | precision | recall | f1 | accuracy |best_importances|
@@ -294,7 +360,8 @@ for i, (train_index, test_index) in enumerate(stratified_k_fold.split(data, data
 
 # 결론
 
+### 딥러닝과 머신러닝을 비교해 보았을 때 acc는 머신러닝이 더 높게 나옴(RandomForestClassifier)
+### 하지만 0.71(MLP)과 0.72(RandomForestClassifier)차이 이므로 그렇게 유의미한 차이는 아님
 ### acc: 0.8을 넘지 못함
 ### 유의미한 변수를 찾지 못함
-### 데이터 불균형으로 인한 모델 학습 실패
-### 유의미한 칼럼이 빠졌거나 애초에 Churn을 잘못수집했을 가능성이 있음음
+### 유의미한 칼럼이 빠졌거나 애초에 Churn을 잘못수집했을 가능성이 있음
